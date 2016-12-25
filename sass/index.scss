@@ -234,18 +234,23 @@ html {
 		}
 	}
 }
-#centerBox {
+
+
+#centerBoxScroll {
 	position: absolute;
-	top: 42%;
-	left: 50%;
-	@include transform(translateX(-50%));
+	top: 42%; bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#centerBox {
 	width: 70%;
 	max-width: 1100px;
 	margin: 0 auto;
-	z-index: 2;
+	padding-bottom: 100px;
 }
 #infor {
 	height: 141px;
+	margin-bottom: 100px;
 	position: relative;
 	h1 {
 		position: absolute;
@@ -353,15 +358,21 @@ html {
 	}
 }
 
-#menuBox {
+
+#mainScroll {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	@include translate(-50%,  -50%);
+	top: 30%; left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+#menuBox {
+	position: relative;
+	top: -50px;
+	margin: auto;
 	width: 80%;
 	max-width: 475px;
 	display: none;
-	// opacity: 0;
 	a {
 		display: block;
 		line-height: 45px;
@@ -490,6 +501,7 @@ html {
 }
 
 #contactPage {
+	position: static;
 	display: none;
 	width: 100%;
 	max-width: 1100px;
@@ -630,10 +642,8 @@ html {
 		display: block;
 		margin-bottom: 32px;
 		width: 12px; height: 12px;
-		// border: 2px solid #28dde0;
 		border-radius: 50%;
 		transition: .3s;
-		// color: #28dde0;
 		span {
 			position: absolute;
 			top: 0; right: 100%;
@@ -642,7 +652,6 @@ html {
 			font-size: 14px;
 			white-space: nowrap;
 			transition: .3s;
-			// color: #28dde0;
 			opacity: 0.4;
 		}
 		&:hover {
@@ -652,7 +661,6 @@ html {
 		}
 	}
 	.active {
-		// background: #28dde0;
 		span {
 			opacity: 1 !important;
 		}
@@ -877,9 +885,6 @@ html {
 	}
 	#centerBox {
 		width: 80%;
-		/*  #infor {
-			height: 75px;
-		} */
 		h1 {
 			font-size: 50px;
 			line-height: 95px;
@@ -897,11 +902,9 @@ html {
 @media screen and (max-width: 760px) {
 	#menuBox {
 		top: 30%;
-		@include translate(-50%,  0);
 	}
 	#header {
 		.log {
-			// width: 30%;
 			top: 15px;
 			left: 15px;
 		}

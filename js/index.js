@@ -2,7 +2,10 @@
 
 
 
-
+	var isMobile = false;
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	　　isMobile = true;
+	}
 
 
 	// 隐藏地址栏  & 处理事件的时候 ，防止滚动条出现
@@ -16,19 +19,40 @@
 		ev.preventDefault();
 	})
 
+	$(window).on('touchstart', function (ev) {
+		console.log(ev.target)
+	})
 	if (isMobile) {
-		$('a').on('touchend', function (ev) {
-			// alert(1);
-			// if (ev.touchs.target.tagName.toLowerCase() == 'a') {
-				window.location = this.href;
-			// }
+		var target, old;
+		$('a').on('touchstart', function (ev) {
+			target = ev.target;
+			$('a').on('touchmove', function (ev) {
+				target = null;
+			});
+			$('a').on('touchend', function (ev) {
+				old = ev.target;
+				if (target == old) {
+					window.location = this.href;
+				}
+			})
 		})
 	}
 	var myScroll = new IScroll('#execBox', {
-		    mouseWheel: true,
-		    scrollbars: true,
-		     probeType: 3
-		});
+	    mouseWheel: true,
+	    scrollbars: true,
+	    hScroll: false,
+	     probeType: 3
+	});
+
+	/*var mainScroll = new IScroll('#mainScroll', {
+	    mouseWheel: true,
+	    hScroll: false,
+	});*/
+
+	var centerBoxScroll = new IScroll('#centerBoxScroll', {
+	    mouseWheel: true,
+	    hScroll: false,
+	});
 
 	myScroll.on('scrollStart', function () {
 		$(this.indicators[0].indicator).animate({
@@ -37,7 +61,6 @@
 		 if (this.y < -10) {
 			$('#header').fadeOut()
 		 }
-		// $('#header').fadeOut()
 	})
 	myScroll.on('scrollEnd', function () {
 		$(this.indicators[0].indicator).animate({
@@ -60,10 +83,7 @@
 	isMobile=mobile();*/
 
 
-	var isMobile = false;
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	　　isMobile = true;
-	}
+	
 
 	// 主屏背景图 相关事件
 	function setMainImage (id) {
@@ -300,6 +320,7 @@
 	var setImage = new setMainImage('#mainImagArea');
 	var mainIntroBox = new IntroBox('#centerBox .spanBox');
 
+
 	// 初始化：添加 进入 移出 的回调函数，将内容区 和 背景关联起来
 	setImage.init ({
 		showFn: function (title) {
@@ -333,8 +354,8 @@
 	setImage.autoPlay();
 
 
-	// 右边按钮，进入下一张
-	$('.rightBtn').click(function () {
+
+	$('.rightBtn').on('click touchstart',function () {
 		if(setImage.isReady()){
 			return false;
 		};
@@ -343,8 +364,8 @@
 		setImage.autoPlay();
 	});
 
-	// 左边按钮，进入下一张
-	$('.leftBtn').click(function () {
+
+	$('.leftBtn').on('click touchstart', function () {
 		if(setImage.isReady()){
 			return false;
 		};
@@ -354,6 +375,7 @@
 	});
 
 	centerBox.onclick = function (ev) {
+
 		ev.cancelBubble = true;
 	};
 
@@ -400,14 +422,17 @@
 			'img/bg.jpg'
 		],
 		showFn: function () {
+			centerBoxScroll.scrollTo(0, 0);
 			$('#menuBox').fadeIn(400, function () {
 				menuBox.showBox();
 				menuCanTab = true;
+				centerBoxScroll.refresh();
 			});
 		},
 		hideFn: function (title, infor) {
 			menuBox.hideBox();
 			$('#centerBox').fadeOut(400)
+
 		}
 	});
 
@@ -467,29 +492,6 @@
 				 });
 
 
-				/*scroll.init('#bar span', {
-					up: function () {
-						if (canTab == false) {return false}
-						canTab = false;
-						var downEl  = $('#sideBar a').filter('.active').prev()
-						if (!(downEl.length)) {
-							downEl = $('#sideBar a:last')
-						}
-						downEl.trigger('click.bar')
-						// scroll.clearInite();
-					},
-					down: function () {
-						if (canTab == false) {return false}
-						canTab = false;
-						var downEl  = $('#sideBar a').filter('.active').next()
-						if (!(downEl.length)) {
-							downEl = $('#sideBar a').eq(0)
-						}
-						downEl.trigger('click.bar')
-						// scroll.clearInite();
-					}
-				});
-				scroll.clearInite();*/
 			})
 		},
 		hideFn: function (title, infor) {
@@ -509,6 +511,8 @@
 			menuCanTab = true;
 			$('#contactPage').fadeIn(function () {
 				contactBox.showBox();
+				centerBoxScroll.scrollTo(0, 0);
+				centerBoxScroll.refresh()
 			})
 		},
 		hideFn: function (title, infor) {
@@ -539,7 +543,10 @@
 
 
 	// menu 下导航相关
-
+	/*$('#mainScroll').click(function () {
+		alert(1);
+		
+	})*/
 	$('#menuBox nav a').click(function () {
 		var _this = this;
 		$('#menuBox nav a').removeClass('active');
@@ -607,7 +614,9 @@
 				nowHash = 'main';
 				$('#menuBox').fadeOut(600,function () {
 					setImage.now(function () {
-						$('#centerBox').fadeIn()
+						$('#centerBox').fadeIn();
+						centerBoxScroll.scrollTo(0, 0);
+						centerBoxScroll.refresh()
 					});
 					setImage.autoPlay();
 				});
@@ -698,13 +707,11 @@
 			case 'suc':
 			case 'ad':
 				execPage.rePos();
-				// scroll.getInfor('#bar span');
 				break;
 			case 'contact':
 				contactPage.rePos();
 				break;
 			default:
-				// statements_def
 				break;
 		}
 	}, false);
