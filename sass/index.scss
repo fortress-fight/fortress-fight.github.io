@@ -83,6 +83,19 @@ html {
 	bottom: 0; right: 0;
 	overflow: hidden;
 }
+
+
+
+#loadingPage {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: #58a;
+	z-index: 1000;
+}
+
+
+
 // 用于管理图标
 
 .btnIco:before {

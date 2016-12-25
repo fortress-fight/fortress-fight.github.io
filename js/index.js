@@ -1,6 +1,8 @@
 (function () {
 
-
+	window.onload = function () {
+		$('#loadingPage').fadeOut();
+	}
 
 	var isMobile = false;
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -330,6 +332,7 @@
 			$('#intro').fadeIn(800);
 		},
 		hideFn: function (title, infor, hash) {
+			menuCanTab = false;
 			mainIntroBox.hideBox();
 			$('#title').fadeOut(800, function () {
 				$('#title').html(title);
@@ -430,6 +433,8 @@
 			});
 		},
 		hideFn: function (title, infor) {
+				menuCanTab = false;
+
 			menuBox.hideBox();
 			$('#centerBox').fadeOut(400)
 
@@ -495,6 +500,7 @@
 			})
 		},
 		hideFn: function (title, infor) {
+			menuCanTab = false;
 			$('#execBox').fadeOut(800);
 			execBox.hideBox();
 			$('#menuBox').fadeOut(600);
@@ -516,6 +522,7 @@
 			})
 		},
 		hideFn: function (title, infor) {
+			menuCanTab = false;
 			$('#contactPage').fadeOut(800);
 			contactBox.hideBox();
 			$('#menuBox').fadeOut(600);
