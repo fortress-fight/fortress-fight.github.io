@@ -1,6 +1,8 @@
 (function () {
 
+	var imgs = document.getElementsByTagName('img');
 	window.onload = function () {
+		alert(1);
 		$('#loadingPage').fadeOut();
 	}
 
