@@ -1,4 +1,54 @@
 @charset "UTF-8";
+@-webkit-keyframes ro {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0);
+    transform: rotateX(0) rotateY(0); }
+  50% {
+    -webkit-transform: rotateX(180deg) rotateY(180deg);
+    transform: rotateX(180deg) rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg); } }
+@-moz-keyframes ro {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0);
+    transform: rotateX(0) rotateY(0); }
+  50% {
+    -webkit-transform: rotateX(180deg) rotateY(180deg);
+    transform: rotateX(180deg) rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg); } }
+@-ms-keyframes ro {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0);
+    transform: rotateX(0) rotateY(0); }
+  50% {
+    -webkit-transform: rotateX(180deg) rotateY(180deg);
+    transform: rotateX(180deg) rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg); } }
+@-o-keyframes ro {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0);
+    transform: rotateX(0) rotateY(0); }
+  50% {
+    -webkit-transform: rotateX(180deg) rotateY(180deg);
+    transform: rotateX(180deg) rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg); } }
+@keyframes ro {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0);
+    transform: rotateX(0) rotateY(0); }
+  50% {
+    -webkit-transform: rotateX(180deg) rotateY(180deg);
+    transform: rotateX(180deg) rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg); } }
 body,
 html {
   width: 100%;
@@ -95,7 +145,8 @@ html {
   height: 100%;
   width: 100%;
   background: #4d1aa6;
-  z-index: 1000; }
+  z-index: 1000;
+  perspective: 300px; }
   #loadingPage img {
     position: absolute;
     top: 0;
@@ -104,7 +155,9 @@ html {
     bottom: 0;
     margin: auto;
     width: 75px;
-    height: 75px; }
+    height: 75px;
+    animation: ro 4s  infinite ease-in-out;
+    transform-origin: center center 80px; }
 
 .btnIco:before {
   content: '';
