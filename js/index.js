@@ -1,10 +1,37 @@
 (function () {
 
-	var imgs = document.getElementsByTagName('img');
-	window.onload = function () {
-		alert(1);
-		$('#loadingPage').fadeOut();
+
+	var arrImg = [
+		'img/bgWhite.jpg',
+		'img/bg.jpg',
+		'img/aa_woman.jpg',
+		'img/glasses_guy.jpg',
+		'img/aa_woman.jpg',
+		'img/young_girl.jpg',
+		'img/indian_guy2.jpg'
+	]
+
+	var imgNum = 0;
+	for (var i = 0; i < arrImg.length; i++) {
+		var img = new Image();
+		img.src = arrImg[i];
+		img.onload = function () {
+			imgNum ++;
+			if (imgNum === arrImg.length) {
+				$('#loadingPage').fadeOut();
+			}
+		}
+		img.onerror = function () {
+			imgNum ++;
+			if (imgNum === arrImg.length) {
+				$('#loadingPage').fadeOut();
+			}
+		}
 	}
+/*
+	window.onload = function () {
+		$('#loadingPage').fadeOut();
+	}*/
 
 	var isMobile = false;
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -13,8 +40,8 @@
 
 
 	// 隐藏地址栏  & 处理事件的时候 ，防止滚动条出现
-	// window.addEventListener('load', function(){ 
-	//         setTimeout(function(){ window.scrollTo(0,1); }, 100); 
+	// window.addEventListener('load', function(){
+	//         setTimeout(function(){ window.scrollTo(0,1); }, 100);
 	// });
 
 
@@ -45,7 +72,7 @@
 	    mouseWheel: true,
 	    scrollbars: true,
 	    hScroll: false,
-	     probeType: 3
+	    probeType: 3
 	});
 
 	/*var mainScroll = new IScroll('#mainScroll', {
@@ -59,7 +86,7 @@
 	});
 
 	myScroll.on('scrollStart', function () {
-		$(this.indicators[0].indicator).animate({
+		$(this.indicators[0].indicator).stop().animate({
 			opacity: 1
 		}, 500)
 		 if (this.y < -10) {
@@ -67,10 +94,59 @@
 		 }
 	})
 	myScroll.on('scrollEnd', function () {
-		$(this.indicators[0].indicator).animate({
+		$(this.indicators[0].indicator).stop().animate({
 			opacity: 0
 		}, 500)
 	})
+
+
+
+	myScroll.on('scroll', function () {
+		var _this = this;
+		if (isMobile) {
+			this.targetBottom = this.maxScrollY - 50;
+			this.targetTop = 50;
+		} else {
+			this.targetBottom = this.maxScrollY;
+			this.targetTop = 0;
+		}
+		if (this.y >= -20) {
+			$('#header').fadeIn()
+		}
+		if(this.y <= (this.targetBottom)+50){
+			$('#refrash').fadeIn()
+		} else {
+			$('#refrash').fadeOut()
+		}
+
+		$(document).off('touchend.bar').on('touchend.bar', function () {
+			if (_this.y <= (_this.targetBottom)) {
+				if (canTab == false) {return false}
+
+				canTab = false;
+
+				var downEl  = $('#sideBar a').filter('.active').next()
+
+				if (!(downEl.length)) {
+					downEl = $('#sideBar a').eq(0)
+				}
+				downEl.trigger('click.bar')
+			}
+			if (_this.y >= _this.targetTop) {
+				if (canTab == false) {return false}
+				canTab = false;
+				var downEl  = $('#sideBar a').filter('.active').next()
+				if (!(downEl.length)) {
+					downEl = $('#sideBar a').eq(0)
+				}
+				downEl.trigger('click.bar')
+			}
+		});
+	})
+
+
+
+
 
 	// 检测：是否是移动端
 
@@ -87,7 +163,7 @@
 	isMobile=mobile();*/
 
 
-	
+
 
 	// 主屏背景图 相关事件
 	function setMainImage (id) {
@@ -457,48 +533,9 @@
 					canTab = true;
 				});
 				execBox.showBox();
-				 setTimeout(function () {
+				setTimeout(function () {
 			        myScroll.refresh();
 			    }, 0);
-				  myScroll.on('scroll', function () {
-				  	// console.log(isMobile)
-					 if (isMobile) {
-					 	this.targetBottom = this.maxScrollY - 30;
-					 	this.targetTop = 30;
-					 } else {
-					 	this.targetBottom = this.maxScrollY;
-					 	this.targetTop = 0;
-					 }
-					 // console.log(this.targetBottom, this.targetTop)
-					 if (this.y >= -20) {
-						$('#header').fadeIn()
-					 }
-					 if(this.y <= (this.targetBottom)+50){
-					 	$('#refrash').fadeIn()
-					 } else {
-					 	$('#refrash').fadeOut()
-					 }
-				  	if (this.y <= (this.targetBottom)) {
-				  		if (canTab == false) {return false}
-						canTab = false;
-						var downEl  = $('#sideBar a').filter('.active').next()
-						if (!(downEl.length)) {
-							downEl = $('#sideBar a').eq(0)
-						}
-						downEl.trigger('click.bar')
-				  	}
-				  	if (this.y >= this.targetTop) {
-				  		if (canTab == false) {return false}
-						canTab = false;
-						var downEl  = $('#sideBar a').filter('.active').next()
-						if (!(downEl.length)) {
-							downEl = $('#sideBar a').eq(0)
-						}
-						downEl.trigger('click.bar')
-				  	}
-				 });
-
-
 			})
 		},
 		hideFn: function (title, infor) {
@@ -554,7 +591,7 @@
 	// menu 下导航相关
 	/*$('#mainScroll').click(function () {
 		alert(1);
-		
+
 	})*/
 	$('#menuBox nav a').click(function () {
 		var _this = this;
@@ -651,7 +688,7 @@
 			default:
 				break;
 		}
-		
+
 
 	}
 

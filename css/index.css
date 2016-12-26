@@ -5,7 +5,7 @@ html {
   height: 100%;
   overflow: hidden;
   font-size: 14px;
-  font-family: arial, Helvetica; }
+  font-family: arial, Helvetica, 'Microsoft YaHei'; }
 
 @-webkit-keyframes show {
   0% {
@@ -94,8 +94,17 @@ html {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #58a;
+  background: #4d1aa6;
   z-index: 1000; }
+  #loadingPage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 75px;
+    height: 75px; }
 
 .btnIco:before {
   content: '';
@@ -676,6 +685,31 @@ html {
     border-radius: 6px;
     background: #fb3; }
 
+#myInfor span {
+  width: 75px;
+  display: inline-block;
+  font-weight: 600;
+  color: #000; }
+#myInfor a {
+  font-size: 16px;
+  line-height: 25px;
+  color: #5634d1; }
+
+#contactWay a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin: 5px;
+  line-height: 20px;
+  display: inline-block;
+  background: #fff no-repeat center center / 100% 100%; }
+#contactWay .github {
+  background-image: url("../img/github.png"); }
+#contactWay .qq {
+  background-image: url("../img/QQ.png"); }
+#contactWay .emall {
+  background-image: url("../img/emall.png"); }
+
 /* ---------------------- 閫傞厤 --------------------------- */
 @media screen and (max-width: 1410px) {
   #header .log {
@@ -806,9 +840,9 @@ html {
     margin-left: 30%;
     width: 65%; } }
 @media screen and (max-width: 760px) {
-  #menuBox {
-    top: 30%; }
-
+  /* #menuBox {
+  	top: 30%;
+  } */
   #header .log {
     top: 15px;
     left: 15px; }
