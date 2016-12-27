@@ -55,15 +55,15 @@
 
 @include keyframes (ro) {
 	0% {
-		-webkit-transform: rotateX(0) rotateY(0);
+		@include transform(rotateX(0) rotateY(0));
 		transform: rotateX(0) rotateY(0);
 	}
 	50% {
-		-webkit-transform: rotateX(180deg) rotateY(180deg);
+		@include transform(rotateX(180deg) rotateY(180deg));
 		transform: rotateX(180deg) rotateY(180deg);
 	}
 	100% {
-		-webkit-transform:rotateX(360deg)  rotateY(360deg);
+		@include transform(rotateX(360deg)  rotateY(360deg));
 		transform: rotateX(360deg) rotateY(360deg);
 	}
 }
@@ -115,7 +115,9 @@ html {
 		margin: auto;
 		width: 75px; height: 75px;
 		animation: ro 4s  infinite ease-in-out;
+		-webkit-animation: ro 4s  infinite ease-in-out;
 		transform-origin: center center 80px;
+		-webkit-transform-origin: center center 80px;
 	}
 }
 
@@ -976,6 +978,9 @@ html {
 	/* #menuBox {
 		top: 30%;
 	} */
+	#sideImg {
+		display: none !important;
+	}
 	#header {
 		.log {
 			top: 15px;
