@@ -22,6 +22,7 @@ mobileTools.prototype = {
 			_this = this, json = {};
 		if (typeof dir == 'object') {
 			json = dir;
+			limite = callback;
 		} else {
 			json[dir] = callback;
 		}

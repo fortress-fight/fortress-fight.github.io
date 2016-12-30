@@ -136,11 +136,11 @@
 				if (_this.y >= _this.targetTop) {
 					if (canTab == false) {return false}
 					canTab = false;
-					var downEl  = $('#sideBar a').filter('.active').next()
-					if (!(downEl.length)) {
-						downEl = $('#sideBar a').eq(0)
+					var prevEl  = $('#sideBar a').filter('.active').prev()
+					if (!(prevEl.length)) {
+						prevEl = $('#sideBar a:last-child')
 					}
-					downEl.trigger('click.bar')
+					prevEl.trigger('click.bar')
 				}
 			});
 		} else {
@@ -159,11 +159,11 @@
 			if (_this.y >= _this.targetTop) {
 				if (canTab == false) {return false}
 				canTab = false;
-				var downEl  = $('#sideBar a').filter('.active').next()
-				if (!(downEl.length)) {
-					downEl = $('#sideBar a').eq(0)
+				var prevEl  = $('#sideBar a').filter('.active').prev()
+				if (!(prevEl.length)) {
+					prevEl = $('#sideBar a:last-child')
 				}
-				downEl.trigger('click.bar')
+				prevEl.trigger('click.bar')
 			}
 		}
 	})
@@ -217,16 +217,16 @@
 			},
 			isReady: false,
 			title: [
-				'HTML',
-				'css',
+				'HTML/CSS',
 				'JavaScript',
-				'Canvas'
+				'About Me',
+				'Contact Me'
 			],
 			infor: [
-				'At Adison Partners, we know what uncommon talent looks like',
-				'We are the ONLY retained firm that truly bets on our performance',
-				'Dramatically improves business performance outcomes by effectively leveraging people, processes, and technology',
-				'‘Disruptive Talent’ describes the brilliant individuals who think and act differently'
+				"You cannot leave ,real warrior never quits.",
+				"If you can fight , you are lucky.",
+				"I'm the type of person,if you ask me a question, and I don't konw the answer,I'm gonna to tell you that I don't konw.But I bet you what: I konw how to find the answer,and I'll find the answer",
+				"You got a dream, you gotta protect it. People can't do something themselves,they wanna tell you you can't do it.If you want something, go get it. Period."
 			],
 			hash: [
 				'#page=executive',
@@ -386,8 +386,8 @@
 			});
 			// console.log(_this.setting.title[_this.nowIndex]);
 			_this.setting.hideFn && _this.setting.hideFn(_this.setting.title[_this.nowIndex],
-				_this.setting.infor[_this.nowIndex],
-				_this.setting.hash[_this.nowIndex]);
+			_this.setting.infor[_this.nowIndex],
+			_this.setting.hash[_this.nowIndex]);
 		}
 	};
 
@@ -438,7 +438,7 @@
 			mainIntroBox.hideBox();
 			$('#title').fadeOut(800, function () {
 				$('#title').html(title);
-				$('#intro .joinIco').attr({
+				$('#intro .joinIco').parent().attr({
 					href: hash
 				})
 
@@ -618,6 +618,9 @@
 
 	})*/
 	$('#menuBox nav a').click(function () {
+		if(!menuCanTab){
+			return false;
+		};
 		var _this = this;
 		$('#menuBox nav a').removeClass('active');
 		$(this).addClass('active');
