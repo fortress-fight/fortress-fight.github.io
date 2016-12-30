@@ -1,0 +1,103 @@
+
+/*html,body{ height:100%; width:100%; overflow:hidden; position: relative;}*/
+.motor_hook{ display:block; height:107px; width:187px; position:absolute; bottom:100px; left:50%; margin-left:-96px; z-index:2;}
+.motor_wrap{ display:block; height:107px; width:187px; position:absolute; top:0px; left:0; -webkit-transform-origin:50% 700%; -webkit-transform:/*rotate(-32deg)*/translateX(-1050px); z-index:1; opacity:1;}
+.motor_wrap .man{ display:block; height:118px; width:72px; position:absolute; left:67px; top:-26px; z-index:2; -webkit-transform-origin:50% 100%;}
+.motor_wrap .man .body{ display:block; height:118px; width:72px; background: url(images/page_3/3333.gif) no-repeat 0 -181px; background-size:172px 300px; position:absolute; left:0; bottom:0;}
+.motor_wrap .man .head{ display:block; height:54px; width:55px; background: url(images/page_3/3333.gif) no-repeat -74px -181px; background-size:172px 300px; position:absolute; left:2px; top:-52px; -webkit-transform-origin:50% 100%;}
+.motor_wrap .motor .motor_body{ display:block; height:107px; width:172px; background: url(images/page_3/3333.gif) no-repeat 0 0; background-size:172px 300px; position:absolute; left:12px; top:0px; z-index:1;}
+.motor_wrap .motor .motor_handle{ display:block; height:9px; width:7px; background: url(images/page_3/3333.gif) no-repeat -140px -122px; background-size:172px 300px; position:absolute; right:54px; top:12px; z-index:3;}
+.motor_wrap .motor .motor_pipe{ display:block; height:11px; width:17px; background: url(images/page_3/3333.gif) no-repeat -140px -109px; background-size:172px 300px; position:absolute; left:8px; top:91px;}
+.motor_wrap .motor .pipe{ display:block; height:11px; width:17px; background: url(images/page_3/3333.gif) no-repeat -140px -109px; background-size:172px 300px; position:absolute; left:0; top:0; z-index:2;}
+.motor_wrap .motor .wheel_front{ display:block; height:42px; width:42px; background: url(images/page_3/3333.gif) no-repeat -127px -237px; background-size:172px 300px; position:absolute; right:4px; top:84px; -webkit-transform-origin:50% 100%;}
+.motor_wrap .motor .wheel_back{ display:block; height:51px; width:51px; background: url(images/page_3/3333.gif) no-repeat -74px -237px; background-size:172px 300px; position:absolute; left:20px; bottom:-21px; -webkit-transform-origin:50% 100%;}
+.motor_wrap .motor .smoke{ display:block; height:10px; width:10px; background:#ccc; border-radius:10px; position:absolute; left:0px; top:3px;}
+.motor_wrap .penguin{ display:block; height:48px; width:40px; background: url(../images/page_3/3333.gif) no-repeat -131px -181px; background-size:172px 300px; position:absolute; left:27px; top:-6px; -webkit-transform-origin:50% 100%;}
+.motor_shadow{ display:block; height:14px; width:180px; position:absolute; left:50%; margin-left:-85px; bottom:-25px; background:rgba(0,0,0,.5); border-radius:180px/14px; -webkit-transform-origin:50% 600px; -webkit-transform:rotate(-35deg); opacity:0;}
+// .motor_hook{ -webkit-animation:a_motor_hook 1s 2.4s linear infinite alternate;}
+// .motor_wrap{ -webkit-animation:a_motor_wrap 1.5s 0.9s linear both;}
+// .motor_shadow{ -webkit-animation:a_motor_wrap 1.5s 0.9s linear both;}
+// .motor_wrap .motor .motor_handle{ -webkit-animation:a_motor_handle 0.5s linear infinite;}
+// .motor_wrap .motor .motor_body{ -webkit-animation:a_motor_body 0.5s linear infinite;}
+// .motor_wrap .motor .wheel_front{ -webkit-animation:a_wheel_front 0.5s linear infinite;}
+// .motor_wrap .motor .wheel_back{ -webkit-animation:a_wheel_front 0.5s linear infinite;}
+// .motor_wrap .motor .motor_pipe{ -webkit-animation:a_wheel_front 0.5s 0.1s linear infinite;}
+// .motor_wrap .motor .smoke_1{ -webkit-animation:a_smoke 1s 0.1s linear infinite;}
+// .motor_wrap .motor .smoke_2{ -webkit-animation:a_smoke 1s 0.5s linear infinite;}
+// .motor_wrap .penguin{ -webkit-animation:a_motor_penguin 0.5s linear infinite;}
+// .motor_wrap .penguin .scarf{ -webkit-animation:a_motor_penguin_scarf 0.3s linear infinite;}
+
+// .motor_wrap .man{ -webkit-animation:a_motor_man 0.5s linear infinite;}
+// .motor_wrap .man .body .tie{ -webkit-animation:a_motor_penguin_scarf 0.4s 0.2s linear infinite;}
+// .motor_wrap .man .head{ -webkit-animation:a_motor_man_head 0.5s linear infinite;}
+/* 
+@-webkit-keyframes a_motor_hook{
+	0%{ -webkit-transform: translate(0,0);}
+	25%{ -webkit-transform: translate(-2px,0);}
+	50%{ -webkit-transform: translate(4px,0);}
+	75%{ -webkit-transform: translate(-1px,0);}
+	100%{ -webkit-transform: translate(0,0);}
+}
+
+@-webkit-keyframes a_motor_wrap{
+	0%{ -webkit-transform:translateX(-1050px); opacity:0;}
+	50%{ -webkit-transform:translateX(-525px); opacity:.5;}
+	100%{ -webkit-transform:translateX(0px); opacity:1;}
+}
+
+@-webkit-keyframes a_motor_handle{
+	0%{ -webkit-transform:translate(0,0);}
+	25%{ -webkit-transform:translate(1px,1px);}
+	50%{ -webkit-transform:translate(-2px,-4px);}
+	75%{ -webkit-transform:translate(1px,0px);}
+	100%{ -webkit-transform:translate(0,0);}
+}
+
+@-webkit-keyframes a_wheel_front{
+	0%{ -webkit-transform:translate(0,0) scale(1,1);}
+	25%{ -webkit-transform:translate(1px,1px) scale(1.07,0.98);}
+	50%{ -webkit-transform:translate(-1px,-1px) scale(0.96,1.06);}
+	75%{ -webkit-transform:translate(1px,0px) scale(1.05,0.99);}
+	100%{ -webkit-transform:translate(0,0) scale(1,1);}
+}
+
+@-webkit-keyframes a_smoke{
+	0%{ -webkit-transform:translate(0,0) scale(0.5,0.5); opacity:0;}
+	25%{ -webkit-transform:translate(-6px,0px) scale(0.8,0.6); opacity:1;}
+	50%{ -webkit-transform:translate(-12px,-4px) scale(0.9,0.8); opacity:1;}
+	75%{ -webkit-transform:translate(-18px,-12px) scale(1,1); opacity:0.5;}
+	100%{ -webkit-transform:translate(-12px,-16px) scale(1.05,1.05); opacity:0;}
+}
+
+@-webkit-keyframes a_motor_body{
+	0%{ -webkit-transform:translate(0,0) scale(1,1);}
+	25%{ -webkit-transform:translate(1px,1px) scale(1.02,0.99);}
+	50%{ -webkit-transform:translate(-1px,-3px) scale(0.97,1.03);}
+	75%{ -webkit-transform:translate(1px,0px) scale(1.01,1);}
+	100%{ -webkit-transform:translate(0,0) scale(1,1);}
+}
+
+@-webkit-keyframes a_motor_penguin{
+	0%{ -webkit-transform:translate(0,0) scale(1,1);}
+	25%{ -webkit-transform:translate(1px,1px) scale(1.05,0.98);}
+	50%{ -webkit-transform:translate(-1px,-4px) scale(0.96,1.07);}
+	75%{ -webkit-transform:translate(1px,0px) scale(1.03,0.99);}
+	100%{ -webkit-transform:translate(0,0) scale(1,1);}
+}
+
+@-webkit-keyframes a_motor_man{
+	0%{ -webkit-transform:translate(0,0) scale(1,1);}
+	25%{ -webkit-transform:translate(0px,1px) scale(1.02,0.99);}
+	50%{ -webkit-transform:translate(0px,-3px) scale(0.97,1.03);}
+	75%{ -webkit-transform:translate(0px,0px) scale(1.01,1);}
+	100%{ -webkit-transform:translate(0,0) scale(1,1);}
+}
+
+@-webkit-keyframes a_motor_man_head{
+	0%{ -webkit-transform: rotate(0deg);}
+	25%{ -webkit-transform: rotate(8deg);}
+	50%{ -webkit-transform: rotate(-6deg);}
+	75%{ -webkit-transform: rotate(4deg);}
+	100%{ -webkit-transform: rotate(0deg);}
+}
+ */

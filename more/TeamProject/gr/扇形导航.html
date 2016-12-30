@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html {
+			height: 100%;
+		}
+		body{
+			margin: 0;
+			height: 100%;
+			background: url(img/coc-background.jpg) 0 0/ 100% 100% no-repeat;
+		}
+		#menu{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		#menu_list{
+			height: 42px;
+			width: 42px;
+			position: relative;
+			margin: 4px;
+		}
+		#menu_list img{
+			border-radius: 21px;
+			position: absolute;
+			top:0;
+			left:0;
+			transition: 0.5s all ease;
+		}
+		#home{
+			width: 50px;
+			height: 50px;
+			background: #fb3;
+			border-radius: 25px;
+			position: absolute;
+			left:0;
+			top:0;
+			transition: 1s;
+		}
+		.sBtn {
+			width: 100px;
+			height: 100px;
+			background: #58a;
+			position: absolute;
+			left: 50%; top: 50%;
+			margin-left: -50px;
+			margin-top: -50px;
+		}
+		#menu img {
+			width: 200px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-100%);
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var btn = document.getElementById('home');
+			var arr = document.querySelectorAll('.sBtn');
+			var cirNav = new circleNav({
+				home: btn,
+				sBtn: arr,
+				iR: -100,
+				initeDeg: -30,
+				endDeg: -210
+			});
+			cirNav.inite();
+		}
+
+		function circleNav (data) {
+			this.setting = {
+				initeDeg: -45,
+				endDeg: 360,
+				iR: -150
+			}
+			for (attr in data) {
+				this.setting[attr] = data[attr];
+			}
+		}
+
+		circleNav.prototype.inite = function(){
+			var _this = this;
+			this.onOff = true;
+			
+			this.setting.home.onclick = function () {
+				_this.lanNav(this)
+			};
+		};
+
+		circleNav.prototype.lanNav = function(){
+			console.log(this.onOff)
+			if(this.onOff){
+				this.setting.home.style.transform = 'rotate(-360deg)';
+				for(var i = 0; i<this.setting.sBtn.length; i++){
+					var deg = (i/this.setting.sBtn.length) * (this.setting.endDeg-this.setting.initeDeg) * Math.PI / 180 + (this.setting.initeDeg)*Math.PI / 180;
+					var x = Math.cos(deg) * this.setting.iR + this.setting.home.offsetWidth * 0.5;
+					var y = Math.sin(deg) * this.setting.iR + this.setting.home.offsetHeight * 0.5;
+					this.setting.sBtn[i].style.transition = 500+i*500+'ms';
+					this.setting.sBtn[i].style.left = x +'px';
+					this.setting.sBtn[i].style.top = y +'px';
+					this.setting.sBtn[i].style.transform = 'rotate(-720deg)';
+				}
+			} else {// 为假的时候，就让他再回到0deg
+				this.setting.home.style.transform = 'rotate(0deg)';
+				for(var i = 0; i<this.setting.sBtn.length; i++){
+					this.setting.sBtn[i].style.transition = (this.setting.sBtn.length-i)*500+'ms';
+					this.setting.sBtn[i].style.left = '';
+					this.setting.sBtn[i].style.top = '';
+					this.setting.sBtn[i].style.transform = 'rotate(0deg)';
+
+				}
+			}
+			this.onOff = !this.onOff;
+		};
+
+	</script>
+</head>
+<body>
+	<div id="menu">
+		<img src="img/barbarian.png" alt="">
+		<div id="menu_list">
+			<div class="sBtn"></div>
+			<div class="sBtn"></div>
+			<div class="sBtn"></div>
+			<!-- <div class="sBtn"></div> -->
+		</div>
+		<div id='home'></div>
+	</div>
+</body>
+</html>

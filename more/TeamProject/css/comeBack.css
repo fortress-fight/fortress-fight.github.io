@@ -1,0 +1,67 @@
+@keyframes rotate {
+    0% {
+    	opacity: .2;
+   		box-shadow:0 1px 2px rgba(255,255,255,0.1);
+    }
+    50% {
+    	opacity: .8;
+        border:1px solid rgba(59,235,235,1);
+        box-shadow:0 1px 30px rgba(59,255,255,1);
+    }
+    100% {
+    	opacity: .2;
+   		box-shadow:0 1px 2px rgba(255,255,255,0.1);
+    }
+}
+body{
+	background: #000;
+}
+#warp a[btn]{
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	color: #fff;
+	text-align:center;
+	font:20px/50px "微软雅黑";
+	text-decoration: none;
+	border: 1px solid #2b92d4;
+	border-radius: 50%;
+	cursor:pointer;
+	box-shadow:0 1px 2px rgba(0,0,0,.3);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#6cc3fe), to(#21a1d0));
+	animation: 2s rotate infinite ease-in-out;
+	/*transition: .3s;*/
+}
+
+#warp a[btn]:active{
+	transform: scale(1);
+	font-size: 30px;
+	opacity: 1;
+	transition:.3s;
+
+}
+#warp #comebackack{
+	width: 60px;
+	height: 40px;
+	position: absolute;
+	top:30px; right: 20px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 30%;
+	font-size: 20px;
+	color: #000;
+	margin: 2px;
+
+}
+#warp img{
+	padding-top: 5px;
+	width: 35px;
+	height: 25px;
+	vertical-align: top;
+}
+#warp #comebackack:hover{
+	margin: 0;
+	border: 2px solid #464347;
+	background: rgba(255, 255, 255, .2);
+}
