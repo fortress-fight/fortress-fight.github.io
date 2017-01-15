@@ -1,0 +1,623 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的音乐</title>
+		<link rel="stylesheet" href="css/index.css"/>
+		<link rel="short icon" href="img/ic.ico">
+		<script src="js/html5shiv.js"></script>
+		<!--[if IE 6]>
+			<script src="js/DD_belatedPNG_0.0.8a.js"></script>
+			<script>
+				DD_belatedPNG.fix('.png_fix');
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div id="top">
+			<div class="wrap clear_fix">
+				<nav id="top_nav" class="fr">
+					<span>小刀</span>
+					<a href="#" class="top_nav1">
+						退出
+					</a>				
+					<a href="#" class="top_nav2 loged">
+						<em class="green_diamond_ico png_fix"></em>
+						绿钻豪华版
+						<strong class="green_diamond_dredge_ico"></strong>
+					</a>
+					<a href="#" class="top_nav3 loged">
+						<em class="music_bg_ico png_fix"></em>
+						付费音乐包
+						<strong class="music_bag_dredge_ico"></strong>
+					</a>
+					<a href="#" class="top_nav4">
+						全民K歌
+					</a>
+					<a href="#" class="top_nav5">
+						QQ演出
+					</a>
+					<a href="#" class="top_nav6">
+						QPlay
+					</a>
+				</nav>
+			</div>
+		</div>
+		<header id="header">
+			<div id="header_group" class="clear_fix">
+				<h1 id="logo" class="fl">
+					<span>QQ音乐</span>
+					<a href="index.html">
+						<img src="img/logo.png" class="png_fix"alt="qq音乐">
+					</a>
+				</h1>
+				<div id="main_nav" class="fr">
+					<div class="clear_fix">
+						<ul id="header_nav" class="fl clear_fix">
+							<li>
+								<a href="index.html" class="header_nav1">
+									<span>音乐馆</span>
+								</a>
+							</li>
+							<li>
+								<a href="mv.html" class="header_nav2">
+									<span>MV</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="header_nav3 active">
+									<span>我的音乐</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="header_nav4">
+									<span>下载客户端</span>
+								</a>
+							</li>
+						</ul>
+						<form action="#" id="music_search" class="png_fix fr">
+							<input type="text" name="" id="text" class="fl" value="找到好音乐">
+							<input type="submit" name="" value="" class="fr" id="submit">
+						</form>
+					</div>
+					<div id="header_nav_side" class="clear_fix">
+						<nav id="nav_music_room_side" class="header_nav_side_list clear_fix">
+							<a href="#" class="active">首页</a>
+							<span>|</span>
+							<a href="rankinglist/rankinglist.html">排行榜</a>
+							<span>|</span>
+							<a href="#">歌单广场</a>
+							<span>|</span>
+							<a href="#">电台</a>
+							<span>|</span>
+							<a href="#">歌手</a>
+							<span>|</span>
+							<a href="#">专辑</a>
+						</nav>
+						<nav id="nav_mv_side" class="header_nav_side_list clear_fix">
+							<a href="#" class="active">MV推荐</a>
+							<span>|</span>
+							<a href="rankinglist/rankinglist.html">MV排行榜</a>
+							<span>|</span>
+							<a href="#">MV库</a>
+							<span>|</span>
+							<a href="#">音乐现场</a>
+							<span>|</span>
+							<a href="#">MV专题</a>
+							<span>|</span>
+							<a href="#">巅峰榜盛典</a>
+						</nav>
+						<nav id="nav_my_music_side" class="nav_side_active header_nav_side_list clear_fix">
+							<a href="#" class="active">主页</a>
+							<span>|</span>
+							<a href="rankinglist/rankinglist.html">歌单</a>
+							<span>|</span>
+							<a href="#">MV收藏</a>
+							<span>|</span>
+							<a href="#">听众</a>
+							<span>|</span>
+							<a href="#">收听</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="wrap clear_fix">
+			<section id="admin_bar">
+				<div id="admin_bar_tip">
+					<p>暂无音乐基因</p>
+					<strong>当前用户听得歌不够多</strong>
+				</div>
+				<section id="admin_panel">
+					<div class="admin_header clear_fix">
+						<img src="img/admin_header.jpg" alt="" class="fl">
+						<h3 class="fl">
+							<p class="admin_name">小刀</p>
+							<span class="green_diamond_ico png_fix"></span>
+						</h3>
+					</div>
+					<ul id="admin_detail" class="clear_fix">
+						<li>
+							<span>6</span>
+							<em>歌单</em>
+						</li>
+						<li>
+							<span>0</span>
+							<em>收听</em>
+						</li>
+						<li class="no_border">
+							<span>0</span>
+							<em>听众</em>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<div class="main_section fl">
+				<section id="my_song_list">
+					<header class="section_header clear_fix ">
+						<h2 class="title_text fl">
+							我的歌单
+						</h2>
+					</header>
+					<ul id="my_song_infor" class="MV_list clear_fix">
+						<li>
+							<a href="#" class="MV_face">
+								<img src="img/my_song_list.jpg" alt="">
+								<span class="play png_fix"></span>
+							</a>
+							<h4 class="MV_infor text_ellipsis">
+								<a href="#" class="name">我喜欢我喜欢我喜欢我喜欢我喜欢</a>
+							</h4>
+							<p class="MV_intro text_ellipsis">
+								来自：系统创建
+							</p>
+						</li>
+						<li>
+							<a href="#" class="MV_face">
+								<img src="img/my_song_list.jpg" alt="">
+								<span class="play png_fix"></span>
+							</a>
+							<h4 class="MV_infor text_ellipsis">
+								<a href="#" class="name">我喜欢我喜欢我喜欢我喜欢我喜欢</a>
+							</h4>
+							<p class="MV_intro text_ellipsis">
+								来自：系统创建
+							</p>
+						</li>
+						<li>
+							<a href="#" class="MV_face">
+								<img src="img/my_song_list.jpg" alt="">
+								<span class="play png_fix"></span>
+							</a>
+							<h4 class="MV_infor text_ellipsis">
+								<a href="#" class="name">我喜欢我喜欢我喜欢我喜欢我喜欢</a>
+							</h4>
+							<p class="MV_intro text_ellipsis">
+								来自：系统创建
+							</p>
+						</li>
+						<li>
+							<a href="#" class="MV_face">
+								<img src="img/my_song_list.jpg" alt="">
+								<span class="play png_fix"></span>
+							</a>
+							<h4 class="MV_infor text_ellipsis">
+								<a href="#" class="name">我喜欢我喜欢我喜欢我喜欢我喜欢</a>
+							</h4>
+							<p class="MV_intro text_ellipsis">
+								来自：系统创建
+							</p>
+						</li>
+						<li>
+							<a href="#" class="MV_face">
+								<img src="img/my_song_list.jpg" alt="">
+								<span class="play png_fix"></span>
+							</a>
+							<h4 class="MV_infor text_ellipsis">
+								<a href="#" class="name">我喜欢我喜欢我喜欢我喜欢我喜欢</a>
+							</h4>
+							<p class="MV_intro text_ellipsis">
+								来自：系统创建
+							</p>
+						</li>
+						<li>
+							<a href="#" class="MV_face">
+								<img src="img/my_song_list.jpg" alt="">
+								<span class="play png_fix"></span>
+							</a>
+							<h4 class="MV_infor text_ellipsis">
+								<a href="#" class="name">我喜欢我喜欢我喜欢我喜欢我喜欢</a>
+							</h4>
+							<p class="MV_intro text_ellipsis">
+								来自：系统创建
+							</p>
+						</li>
+					</ul>
+				</section>
+				<section id="my_love_singer">
+					<header class="section_header clear_fix ">
+						<h2 class="title_text fl">
+							我收听的歌手
+						</h2>
+					</header>
+					<p class="litter_alert">
+						<span class="litter_alert_ico png_fix"></span>
+						<span>您还没有收听歌手。可以去乐库找找您喜欢的歌手。</span>
+					</p>
+				</section>
+				<section id="my_collect_MV">
+					<header class="section_header clear_fix ">
+						<h2 class="title_text fl">
+							我收听的歌手
+						</h2>
+					</header>
+					<p class="litter_alert">
+						<span class="litter_alert_ico png_fix"></span>
+						<span>您还没有收听歌手。可以去乐库找找您喜欢的歌手。</span>
+					</p>
+				</section>
+			</div>
+
+			<div id="my_music_side_section" class="side_section fr">
+				<section id="my_join_green_member">
+					<a href="#">上传本地音乐</a>
+					<p>开通绿钻豪华版，可享受付费音乐和绿钻双重特权，让你酷炫挡不住。</p>
+					<a href="#">开通绿钻豪华版</a>
+				</section>
+				<section id="my_may_like">
+					<header class="section_header">
+						<h3 class="title_text fl">
+							猜你喜欢听
+						</h3>
+						<div class="recommend_button fl">
+							<a href="#" class="recommend_button_left png_fix fl"></a>
+							<a href="#" class="recommend_button_right png_fix fr"></a>
+						</div>
+					</header>
+					<ul id="my_may_like_list">
+						<li class="active">
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+						<li>
+							<p class="music_detail text_ellipsis">
+								<a href="#" class="name text_ellipsis">
+									摩天轮的思念 (《超少年密码》网络剧插曲)
+								</a>
+								<span>-</span>
+								<span>
+									<a href="#" class="singer text_ellipsis">
+										王俊凯王俊凯王俊凯王俊凯王俊凯
+									</a>
+								</span>
+							</p>
+							<div class="recommend_button_group">
+								<a href="#" class="little_play_icon png_fix"></a>
+								<a href="#" class="little_add_icon png_fix"></a>
+								<a href="#" class="little_heart_icon png_fix"></a>
+								<a href="#" class="litter_star_icon png_fix"></a>
+								<a href="#" class="little_jump_icon png_fix"></a>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<section id="my_visited_people">
+					<header class="section_header">
+						<h3 class="title_text fl">
+							最近访客
+						</h3>
+					</header>
+					<p class="litter_alert">
+						<span class="litter_alert_ico png_fix"></span>
+						<span>还没有歌友访问过您。</span>
+					</p>
+				</section>
+			</div>
+		</section>
+		<footer id="footer">
+			<div id="footer_nav" class="wrap clear_fix">
+				<nav id="nav_list" class="clear_fix">
+					<dl id="footer_down" class="footer_list fl">
+						<dt>软件下载</dt>
+						<dd>
+							<a href="#">PC版</a>
+						</dd>
+						<dd>
+							<a href="#">iPhone客户端</a>
+						</dd>
+						<dd>
+							<a href="#">iPad客户端</a>
+						</dd>
+						<dd>
+							<a href="#">MAC版</a>
+						</dd>
+						<dd>
+							<a href="#">Android客户端</a>
+						</dd>
+						<dd>
+							<a href="#">Android&nbsp;Pad客户端</a>
+						</dd>
+						<dd>
+							<a href="#">Windows&nbsp;Phone版</a>
+						</dd>
+					</dl>
+					<dl id="footer_serv" class="footer_list fl">
+						<dt>特色产品</dt>
+						<dd>
+							<a href="#">车载互联</a>
+						</dd>
+						<dd>
+							<a href="#">QPlay</a>
+						</dd>
+						<dd>
+							<a href="#">QQ音乐开放平台</a>
+						</dd>
+					</dl>
+					<dl id="friend_link" class="footer_list fl">
+						<dt>友情链接</dt>
+						<dd>
+							<a href="#">腾讯视频</a>
+						</dd>
+						<dd>
+							<a href="#">手机QQ空间</a>
+						</dd>
+						<dd>
+							<a href="#">最新版QQ</a>
+						</dd>
+						<dd>
+							<a href="#">腾讯课堂</a>
+						</dd>
+						<dd>
+							<a href="#">腾讯社交广告</a>
+						</dd>
+						<dd>
+							<a href="#">电脑管家</a>
+						</dd>
+						<dd>
+							<a href="#">QQ浏览器</a>
+						</dd>
+						<dd>
+							<a href="#">画报</a>
+						</dd>
+						<dd>
+							<a href="#">腾讯微云</a>
+						</dd>
+						<dd>
+							<a href="#">黄钻活动</a>
+						</dd>
+						<dd>
+							<a href="#">星钻</a>
+						</dd>
+						<dd>
+							<a href="#">企鹅FM</a>
+						</dd>
+						<dd>
+							<a href="#">腾讯云</a>
+						</dd>
+						<dd>
+							<a href="#">腾讯云论坛</a>
+						</dd>
+						<dd>
+							<a href="#">兴趣部落</a>
+						</dd>
+						<dd>
+							<a href="#">腾讯云搜</a>
+						</dd>
+						<dd>
+							<a href="#">智能电视网</a>
+						</dd>
+						<dd>
+							<a href="#">当贝市场</a>
+						</dd>
+					</dl>
+				</nav>
+			</div>
+			<div id="footer_footer" class="wrap">
+				<nav id="footer_link">
+					<a href="#">关于腾讯</a>
+					<span>|</span>
+					<a href="#">About Tencent</a>
+					<span>|</span>
+					<a href="#">服务条款</a>
+					<span>|</span>
+					<a href="#">用户服务协议</a>
+					<span>|</span>
+					<a href="#">广告服务</a>
+					<span>|</span>
+					<a href="#">腾讯招聘</a>
+					<span>|</span>
+					<a href="#">客服中心</a>
+					<span>|</span>
+					<a href="#">网站导航</a>
+				</nav>
+				<div id="footer_text">
+					<em>
+						Copyright&nbsp;&copy;&nbsp;1998&nbsp;-&nbsp;2016&nbsp;Tencent.
+					</em>
+					&nbsp;All&nbsp;Rights&nbsp;Reserved.
+				</div>
+				<a id="public" href="#">
+					<em>腾讯公司&nbsp;</em>
+					版权所有&nbsp;腾讯网络文化经营许可证
+				</a>
+			</div>
+		</footer>
+	</body>
+</html>

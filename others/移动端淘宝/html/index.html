@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> -->
+		<title>taobao</title>
+		<link rel="stylesheet" href="css/index.css">
+		<script>
+			!function(){
+				var scale = 1;
+				var ratio = window.devicePixelRatio;
+				scale = scale/ratio;
+				var meta = document.createElement("meta");
+				meta.setAttribute("name","viewport");
+				meta.setAttribute("content","width=device-width,initial-scale="+scale+",minimum-scale="+scale+",maximum-scale="+scale+",user-scalable=no");
+				document.head.appendChild(meta);
+			}();
+			fn();
+			window.addEventListener("resize",fn);
+			function fn(){
+				var html = document.querySelector("html");
+				var width = html.getBoundingClientRect().width;
+				html.style.fontSize = width/16 + "px";
+			}
+		</script>
+	</head>
+	<body>
+		<header id="header">
+			<form action="#" id="searchPlace">
+				<input type="search" name="" class="searchCon" placeholder="寻找宝贝店铺">
+				<input type="submit" class="searchIcon" value="">
+			</form>
+		</header>
+		<div id="mainCon">
+			<section class="picTab">
+				<a href="#">
+					<img src="img/banner.jpg" alt="">
+				</a>
+				<nav class="dotNavBut clearFix">
+					<a href="#" class="active"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</nav>
+			</section>
+			<nav id="goodsItem" class="clearFix">
+				<a href="#">
+					天猫
+					<img src="" alt="">
+				</a>
+				<a href="#">
+					聚划算
+				</a>
+				<a href="#">
+					到家
+				</a>
+				<a href="#">
+					外卖
+				</a>
+				<a href="#">
+					充值
+				</a>
+				<a href="#">
+					阿里旅行
+				</a>
+				<a href="#">
+					领金币
+				</a>
+				<a href="#">
+					分类
+				</a>
+			</nav>
+			<section id="taobaoNews" class="clearFix">
+				<h3>
+					<a href="#">淘宝头条</a>
+				</h3>
+				<p>
+					<span>手机</span>
+					<strong>量产难题完美解决&nbsp;魅族日出出出出</strong>
+				</p>
+			</section>
+			<section id="mainAd" class="clearFix">
+				<a href="#" class="mainAdItem adPicBg fl">
+					<span class="clock clearFix">
+						<em class="hour">00</em>
+						<i class="dot">&#58;</i>
+						<em class="min">00</em>
+						<i class="dot">&#58;</i>
+						<em class="sec">00</em>
+					</span>
+				</a>
+				<section class="sideAdItem fr">
+					<a href="#" class="sideAdTop adPicBg">
+						<img src="img/a3.png" alt="">
+					</a>
+					<section class="sideAdList">
+						<a href="#" class="adPicBg fl"></a>
+						<a href="#" class="adPicBg fr"></a>
+					</section>
+				</section>
+			</section>
+			<section class="sectionAd">
+				<section class="conTitle">
+					<span>
+						<i class="conTitleIcon"></i>
+						好品质
+					</span>
+				</section>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w255h200 adPicBg fl">
+						<img src="img/fabulous.jpg" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/select.png" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/supervalue.png" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/famous.png" alt="" />
+					</a>
+				</div>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w255h200 adPicBg fl">
+						<img src="img/day-day-cheap.png" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/anni.png" alt="" />
+					</a>
+					<a href="#" class="w127h199 adPicBg fl">
+						<img src="img/beauty.png"/>
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/clear.png" alt="" />
+					</a>
+				</div>
+			</section>
+			<section class="sectionAd">
+				<section  id="goodQuality" class="conTitle">
+					<span>
+						<i class="conTitleIcon"></i>
+						超实惠
+					</span>
+				</section>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w382h167 adPicBg fl">
+						<img src="img/fashion.png" alt="" />
+					</a>
+					<a href="#" class="w256h167 adPicBg fl">
+						<img src="img/brand.png" alt="" />
+					</a>
+				</div>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/life.jpg" alt="" />
+					</a>
+					<a href="#" class="w127h199 adPicBg fl">
+						<img src="img/new.png" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/phone.png" alt="" />
+					</a>
+					<a href="#" class="w127h199 adPicBg fl">
+						<img src="img/fruits.jpg"/>
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/suning.jpg" alt="" />
+					</a>
+				</div>
+			</section>
+			<section class="sectionAd">
+				<section id="feature" class="conTitle">
+					<span>
+						<i class="conTitleIcon"></i>
+						有特色
+					</span>
+				</section>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w255h200 adPicBg fl">
+						<img src="img/fabulous.jpg" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/select.png" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/supervalue.png" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/famous.png" alt="" />
+					</a>
+				</div>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w255h200 adPicBg fl">
+						<img src="img/day-day-cheap.png" alt="" />
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/anni.png" alt="" />
+					</a>
+					<a href="#" class="w127h199 adPicBg fl">
+						<img src="img/beauty.png"/>
+					</a>
+					<a href="#" class="w126h199 adPicBg fl">
+						<img src="img/clear.png" alt="" />
+					</a>
+				</div>
+			</section>
+			<section class="adBar">
+				<img src="img/banner2.jpg"/>
+			</section>
+			<section class="sectionAd">
+				<section id="hotMark" class="conTitle">
+					<span>
+						<i class="conTitleIcon"></i>
+						热门市场
+					</span>
+					<em class="moreBut">
+						更多
+						<span class="moreIcon">
+							
+						</span>
+					</em>
+				</section>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w319h246 adPicBg fl">
+						<img src="img/taste.jpg" alt="" />
+					</a>
+					<a href="#" class="w319h246 adPicBg fl">
+						<img src="img/taste.jpg" alt="" />
+					</a>
+				</div>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w167h184 adPicBg fl">
+						<img src="img/childcloth.jpg" alt="" />
+					</a>
+					<a href="#" class="w152h184 adPicBg fl">
+						<img src="img/childcloth.jpg" alt="" />
+					</a>
+					<a href="#" class="w152h184 adPicBg fl">
+						<img src="img/childcloth.jpg"/>
+					</a>
+					<a href="#" class="w167h184 adPicBg fl">
+						<img src="img/childcloth.jpg" alt="" />
+					</a>
+				</div>
+				<div class="sectionAdList clearFix">
+					<a href="#" class="w167h184 adPicBg fl">
+						<img src="img/childcloth.jpg" alt="" />
+					</a>
+					<a href="#" class="w152h184 adPicBg fl">
+						<img src="img/childcloth.jpg" alt="" />
+					</a>
+					<a href="#" class="w152h184 adPicBg fl">
+						<img src="img/childcloth.jpg"/>
+					</a>
+					<a href="#" class="w167h184 adPicBg fl">
+						<img src="img/childcloth.jpg" alt="" />
+					</a>
+				</div>
+				<section class="adBar">
+					<img src="img/banner2.jpg"/>
+				</section>
+				<section class="adsection2">
+					<section class="titleBar">
+						<h4 class="fl">每日好店</h4>
+						<div class="fr">
+							更新50个好店
+						</div>
+					</section>
+					<section class="picTab">
+						<a href="#">
+							<img src="img/adshop.jpg" alt="" />
+						</a>
+						<nav class="dotNavBut clearFix">
+							<a href="#" class="active"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+						</nav>
+					</section>
+				</section>
+			</section>
+			<section id="guess" class="conTitle">
+				<span>
+					猜你喜欢
+				</span>
+			</section>
+			<ul class="goods clearFix">
+				<li class="fl">
+					<a class="goodsImg" href="#">
+						<img src="img/goos.jpg" alt="" />
+					</a>
+					<a class="intro" href="#">
+						啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+					</a>
+					<span class="price">
+						&yen;1888
+					</span>
+				</li>
+				<li class="fl">
+					<a class="goodsImg" href="#">
+						<img src="img/goos.jpg" alt="" />
+					</a>
+					<a class="intro" href="#">
+						啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+					</a>
+					<span class="price">
+						&yen;1888
+					</span>
+				</li>
+				<li class="fl">
+					<a class="goodsImg" href="#">
+						<img src="img/goos.jpg" alt="" />
+					</a>
+					<a class="intro" href="#">
+						啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+					</a>
+					<span class="price">
+						&yen;1888
+					</span>
+				</li>
+				<li class="fl">
+					<a class="goodsImg" href="#">
+						<img src="img/goos.jpg" alt="" />
+					</a>
+					<a class="intro" href="#">
+						啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+					</a>
+					<span class="price">
+						&yen;1888
+					</span>
+				</li>
+			</ul>
+			<footer id="conFoot">
+				<nav>
+					<a href="#">登录</a>
+					<a href="#">注册</a>
+					<a href="#">电脑版</a>
+					<a href="#">用户反馈</a>
+				</nav>
+				<p>
+					<span>&copy;</span><em>2016&nbsp;浙&nbsp;B2-20080224&nbsp;服务中心</em>
+				</p>
+			</footer>
+		</div>
+		<a href="#goodsItem" id="topBut">
+				
+		</a>
+		<footer id="footer">
+			<nav>
+				<a href="#">
+					首页
+				</a>
+				<a href="#">
+					物流
+				</a>
+				<a href="#">
+					购物车
+				</a>
+				<a href="#">
+					我的淘宝
+				</a>
+				<a href="#">
+					更多
+				</a>			
+			</nav>
+		</footer>
+	</body>
+</html>
