@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+	body,
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	dl,
+	dd,
+	form{
+		margin: 0;
+	}
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+	img {
+		border: none;
+		vertical-align: top;
+	}
+	input,
+	textarea {
+		margin: 0;
+		padding: 0;
+		outline: none;
+	}
+	select {
+		outline:none;
+	}
+	textarea {
+		resize: none;
+		overflow: auto;
+	}
+	table {
+		border-collapse: collapse;
+	}
+	th,
+	td {
+		padding: 0;
+	}
+
+

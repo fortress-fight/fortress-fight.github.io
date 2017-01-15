@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body {
+		overflow: hidden;
+		margin: 0;
+	}
+		#frameBox {
+			border: 1px solid black;
+			background: rgba(0, 0, 0, .5);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#box1 {
+			width: 100vw;
+			height: 100vh;
+		}
+	</style>
+	<script src= 'js/frame.js'></script>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<script>
+		/*function frame (id) {
+			this.obj = document.getElementById(id);
+		};
+
+		;(function(global, factory){
+			factory(global)
+		})(typeof window !== 'undefined' ? window : this, function (global, noGlobal){
+		function frame (id) {
+			return new frame.init(id);
+		};
+		frame.prototype = {
+		constructor: frame,
+		init: function(){
+			var _this = this;
+			this.obj.addEventListener('mousedown', down);
+			function down (ev) {
+				var ev = ev || window.event;
+				_this.fnDown(ev, this);
+			};
+		},
+		fnDown: function(ev, sponser){
+			var _this = this;
+
+			this.initX = ev.clientX;
+			this.initY = ev.clientY;
+
+			this.frame = document.createElement('div');
+			this.frame.id = 'frameBox';
+			this.frame.style.top = ev.clientY - this.pos(this.obj).Y + 'px';
+			this.frame.style.left = ev.clientX - this.pos(this.obj).X + 'px';
+			this.obj.appendChild(this.frame);
+
+			document.addEventListener('mousemove', move, false);
+			document.addEventListener('mouseup', up, false);
+			function move (ev) {
+				_this.fnMove(ev)
+			}
+			function up () {
+				_this.fnUp(move, up);
+			}
+		},
+		fnMove: function(ev){
+			disX = ev.clientX - this.initX;
+			disY = ev.clientY - this.initY;
+			this.frame.style.width = Math.abs(disX) + 'px';
+			this.frame.style.height = Math.abs(disY) + 'px';
+
+			if (disX < 0) {
+				this.frame.style.left = ev.clientX + 'px';
+			};
+			if (disY < 0) {
+				this.frame.style.top = ev.clientY + 'px';
+			};
+		},
+		fnUp: function(fn1, fn2){
+			document.removeEventListener('mousemove', fn1);
+			document.removeEventListener('mouseup', fn2);
+			this.obj.removeChild(this.frame);
+		},
+		pos: function (obj) {
+			console.log(obj)
+			var setPos = {};
+			setPos.X = obj.getBoundingClientRect().left;
+			setPos.Y = obj.getBoundingClientRect().top;
+
+			return setPos;
+		}
+	};
+
+		frame.init = function(id){
+			this.obj = document.getElementById(id);
+			this.init();
+		};
+
+		frame.init.prototype = frame.prototype;
+			window.frame = frame;
+		});
+*/
+		frame('box1');
+	</script>
+</body>
+</html>

@@ -1,0 +1,557 @@
+@charset "utf-8";
+
+body {
+	font: 12px/22px '微软雅黑';
+}
+
+.clearFix:after {
+	content: '';
+	clear: both;
+	height: 0;
+	display: block;
+}
+.clearFix {
+	zoom: 1;
+}
+
+/* 图标管理 */
+
+
+.vipIco,
+.phoneIco,
+.searchIco,
+.downArrowIco {
+	position: absolute;
+}
+
+.searchIco,
+.downArrowIco {
+	background: url('../img/lay-header.png') no-repeat;
+}
+
+/* 左侧导航栏小图标 */
+
+%icoInite {
+	position: absolute;
+	left: 29px; top: 0;
+	width: 24px; height: 32px;
+	background: url('../img/ico-message.png') no-repeat;
+}
+@for $i from 1 through 10 {
+	.navIco#{$i} {
+		@extend %icoInite;
+		background-position: 0 -32px * $i + 32px;
+	}
+}
+
+.moveToIco,
+.reNameIco,
+.removeIco,
+.newFileIco,
+.reloadIco {
+	position: absolute;
+	left: 18px; top: 1px;
+	width: 24px; height: 32px;
+	background: url('../img/ico-message.png') no-repeat;
+}
+
+.moveToIco {
+	background-position: 0 -448px;
+}
+.reNameIco {
+	background-position: 0 -512px;
+}
+.removeIco {
+	background-position: 0 -288px;
+}
+.newFileIco {
+	background-position: 0 -544px;
+}
+.reloadIco {
+	background-position: 0 -704px;
+}
+
+
+.smallFileIco,
+.fileIco {
+	position: absolute;
+	background: url('../img/folder-tree.png') no-repeat;
+}
+
+.smallFileIco {
+	top: 6px; left: -21px;
+	width: 15px; height: 13px;
+}
+.fileIco {
+	top: 9px; left: -33px;
+	width: 8px; height: 8px;
+	background-position: -1px -52px;
+}
+/* .closeFileIco {
+	top: 9px; left: -33px;
+	width: 8px; height: 8px;
+	background-position: -1px -52px;
+} */
+
+.vipIco {
+	left: 13px; top: 6px;
+	width: 24px; height: 15px;
+	background: url('../img/icon-vip-white.png') no-repeat;
+}
+
+.searchIco {
+	top: 9px; left: 8px;
+	width: 13px; height: 13px;
+	background-position: 0 -168px;
+}
+
+.phoneIco {
+	top: 7px; left: 21px;
+	width: 12px; height: 16px;
+	background: url('../img/icon-phone.png');
+}
+
+.downArrowIco {
+	top: 15px; left: 42px;
+	width: 7px; height: 4px;
+	background-position: -51px -222px;
+	overflow: hidden;
+}
+
+.checkBoxIco {
+	position: absolute;
+	background: url('../img/ico.png') no-repeat;
+}
+
+.checkBoxIco  {
+	left: 10px; top: 10px;
+	width: 14px; height: 14px;
+	background-position: 0 -270px;
+}
+
+
+/* 微云网盘主页头部 */
+
+#header {
+	height: 50px;
+	border-bottom: 1px solid #d8dce5;
+	h1 {
+		width: 200px; height: 100%;
+		float: left;
+		background: url('../img/logo.png') no-repeat center;
+		line-height: 1000px;
+		overflow: hidden;
+	}
+}
+
+#hearderRight {
+	float: right;
+	padding-top: 10px;
+	width: 518px;
+	nav {
+		float: left;
+		line-height: 28px;
+		a {
+			position: relative;
+			float: left;
+			margin-right: 13px;
+			border: 1px solid #147ade;
+		}
+		.headVip {
+			padding: 0 12px 0 44px;
+			color: #fff;
+			background: #3091f2;
+		}
+		.headDow {
+			padding: 0 20px 0 42px;
+			color: #3091f2;
+		}
+	}
+	.search {
+		position: relative;
+		float: left;
+		margin: 0 2px;
+		width: 160px;
+		height: 28px;
+		border: 1px solid #c2c3ca;
+		input {
+			font-size: 12px;
+			width: 100%;
+			border: none;
+			background: none;
+			line-height: 28px;
+			padding-left: 30px;
+			color: #adadad;
+		}
+	}
+}
+#user {
+	float: left;
+	margin-left: 22px;
+	position: relative;
+	img {
+		width: 32px; height: 32px;
+	}
+}
+
+/* 微云头部 ------> 微云左侧 */
+
+#con {
+	position: relative;
+	height: calc(100vh - 61px);
+	overflow: hidden;
+}
+
+#leftArea {
+	position: absolute;
+	top: 0; left: 0;
+	padding-top: 4px;
+	width: 160px;
+	height: 100%;
+	background: #eaedf4;
+	form {
+		padding: 13px 0;
+		text-align: center;
+		label {
+			display: inline-block;
+			width: 130px; height: 36px;
+			background: #3091f2;
+			text-align: center;
+			font-size: 14px;
+			line-height: 36px;
+			color: #fff;
+		}
+		input {
+			display: none;
+		}
+	}
+	nav {
+		padding: 13px 0 6px;
+		font-size: 14px;
+		border-bottom: 1px solid #d8dce5;
+		a {
+			position: relative;
+			display: block;
+			margin-bottom: 7px;
+			padding-left: 52px;
+			line-height: 32px;
+			color: #505254;
+		}
+		.active {
+			background: #ced4e0;
+		}
+		a:hover {
+			background: #e0e4ed;
+		}
+	}
+}
+
+/* 微云左侧 ------> 微云右侧 */
+/* 微云右侧 头部导航 */
+
+#rightArea {
+	margin-left: 160px;
+	height: 100%;
+	header {
+		padding: 12px 13px;
+		height: 36px;
+		background: #f5f6f9;
+		nav {
+			a {
+				position: relative;
+				float: left;
+				height: 34px;
+				padding: 0 18px 0 42px;
+				margin-right: 5px;
+				border: 1px solid #c7c9cf;
+				line-height: 34px;
+				color: #000;
+				background: #fff;
+			}
+		}
+	}
+}
+
+/* 微云右侧 头部导航 -----> 微云右侧 内容左侧导航 */
+
+#main {
+	position: relative;
+	height: 100%;
+}
+
+#rightConArea {
+	position: absolute;
+	top: 0; left: 0;
+	float: left;
+	width: 184px;
+	height: 100%;
+	background: #fff;
+	border-right: 1px solid #e6e9f0;
+}
+
+#fileTree {
+	padding: 1px 0;
+	margin: 0 auto;
+	width: 160px; height: 100%;
+	li {
+		position: relative;
+		line-height: 26px;
+		// min-height: 26px;
+		cursor: pointer;
+		ul {
+			display: none;
+		}
+	}
+	.title {
+		padding: 0 0 0 38px;
+		margin-bottom: 1px;
+		border: 1px solid #fff;
+		font-weight: 200;
+		p {
+			position: relative;
+		}
+	}
+	.title:hover {
+		background: #e7f2fe;
+		border-color: #bfdaf4;
+	}
+	.focus {
+		background: #e7f2fe;
+		border-color: #bfdaf4;
+	}
+	.active .fileIco {
+		background-position: -1px -101px;
+	}
+}
+
+/*微云右侧 内容左侧导航 ------> 微云右侧 主要内容区 */
+/* 头部 */
+
+#mainArea {
+		position: relative;
+		margin-left: 184px;
+		height: 100%;
+	.mainHeader {
+		height: 30px;
+		border-bottom: 1px solid #e6e9f0;
+		.checkBox {
+			float: left;
+			position: relative;
+			border-right: 1px solid #e6e9f0;
+			width: 34px; height: 30px;
+		}
+		.active {
+			background-position: 0 -320px;
+		}
+	}
+	.mainNav {
+		line-height: 30px;
+		a {
+			position: relative;
+			float: left;
+			padding: 0 20px 0 20px;
+			margin-right: -14px;
+			background: url('../img/main-path.png') no-repeat right -49px;
+			color: #000;
+		}
+		.lastPath {
+			background-position-y: -199px;
+		}
+	}
+}
+
+#fileArea {
+	
+	padding: 10px;
+	height: 100%;
+	a {
+		float: left;
+		position: relative;
+		padding-top: 10px;
+		margin-right: 14px;
+		border: 1px solid #fff;
+		text-align: center;
+		width: 110px;
+		i {
+			display: inline-block;
+			margin-bottom: 13px;
+			width:64px; height: 54px;
+			background: url('../img/file.png') no-repeat 0 -5px;
+		}
+		span {
+			display: block;
+			height: 30px;
+			text-align: center;
+			line-height: 22px;
+			color: #000;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		em {
+			display: none;
+			position: absolute;
+			top: -1px; left: -1px;
+			width: 18px; height: 18px;
+			background: url('../img/ico.png') no-repeat 0 -370px;
+		}
+		
+		input {
+			display: none;
+			position: absolute;
+			bottom: 10px;
+			padding: 0 5px;
+			left: 50%;
+			font-size: 14px;
+			margin-left: -45px;
+			height: 18px; line-height: 18px;
+			width: 80px;
+		}
+	}
+	a:hover,
+	.focus {
+		border-color: #c3d8f0;
+		background: #f3f9fe;
+	}
+	a:hover em {
+		display: block;
+	}
+	.focus {
+		a {
+			border-color: #c3d8f0;
+			background: #f3f9fe;
+		}
+		em {
+			display: block;
+			background-position-y: -421px;
+		}
+	}
+}
+
+#frameBox {
+	border: 1px solid #c3d8f0;
+	background: blue;
+	opacity: .3;
+	position: absolute;
+	top: 0; left: 0;
+}
+
+#moveToArea {
+	display: none;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: rgba(255, 255, 255, .5);
+	z-index: 5;
+	.conArea {
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		width: 450px; height: 482px;
+		border: 1px solid #c8ccd3;
+		margin: auto;
+		background: #fff;
+		header {
+			padding-left: 18px;
+			height: 60px;
+			line-height: 60px;
+			font-size: 18px;
+			border-bottom: 1px solid #c8ccd3;
+		}
+		.files {
+			height: 97px;
+		}
+		.btns {
+			float: right;
+			a {
+				display: inline-block;
+				width: 92px;
+				height: 36px;
+				margin-right: 25px;
+				border: 1px solid #c7c9cf;
+				line-height: 34px; height: 34px;
+				text-align: center;
+				color: #000;
+			}
+			.confirm {
+				background: #93c6f9;
+				color: #fff;
+			}
+		}
+	}
+	.navArea {
+		margin: 0 auto 24px;
+		width: 400px;
+		height: 238px;
+		border: 1px solid #dedede;
+		.path {
+			height: 37px;
+			line-height: 37px;
+			font-size: 14px;
+			padding: 0 10px;
+			border-bottom: 1px solid #dedede;
+		}
+	}
+}
+#littleTree {
+	// position: absolute;
+	// top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 10;
+	margin: auto;
+	height: 200px;
+	// border: 1px solid black;
+	background: #fff;
+	overflow: auto;
+	li {
+		position: relative;
+		line-height: 26px;
+		// min-height: 26px;
+		cursor: pointer;
+		ul {
+			display: none;
+		}
+	}
+	.title {
+		padding: 0 0 0 38px;
+		margin-bottom: 1px;
+		border: 1px solid #fff;
+		font-weight: 200;
+		p {
+			position: relative;
+		}
+	}
+	.title:hover {
+		background: #e7f2fe;
+		border-color: #bfdaf4;
+	}
+	.focus {
+		background: #e7f2fe;
+		border-color: #bfdaf4;
+	}
+	.active .fileIco {
+		background-position: -1px -101px;
+	}
+}
+
+#tip {
+	height: 32px;
+	width: 222px;
+	text-align: center;
+	line-height: 32px;
+	font-size: 14px;
+	position: absolute; 
+	top: 0; left: 0; right: 0;
+	margin: 0 auto;
+	z-index: 10;
+	opacity: 0;
+}
+.suc {
+	color: #000;
+	background: #eaffda;
+	border: 1px solid #a7c98e;
+	border-top-width: 0;
+}
+.fail {
+	color: #fff;
+	background: #f49918;
+	border: 1px solid #f49918;
+	border-top-width: 0;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>腾讯微云</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="scss/mainPage.css">
+	<link rel="shortcut icon" href="img/weiyunIco.ico">
+	<script src = 'js/html5shiv.js'></script>
+	<script src = 'js/tool.js'></script>
+	<script src = 'js/dealData.js'></script>
+	<script src = 'js/setData.js'></script>
+	<script src = 'js/data.js'></script>
+	<script src = 'js/frame.js'></script>
+</head>
+<body>
+	<header id="header">
+		<h1>腾讯微云</h1>
+		<div id="hearderRight">
+			<nav>
+				<a href="javascript:;" class="headVip">
+					<span class="vipIco"></span>
+					<span>会员中心</span>
+				</a>
+				<a href="javascript:;" class="headDow">
+					<span class="phoneIco"></span>
+					<span>下载客户端</span>
+				</a>
+			</nav>
+			<div class="search">
+				<span class="searchIco"></span>
+				<input type="text" placeholder="搜索全部文件">
+			</div>
+			<div id="user">
+				<span class="downArrowIco"></span>
+				<img src="img/g.jpg" alt="">
+			</div>
+		</div>
+	</header>
+	<section id="con">
+		<section id="leftArea">
+			<form action="">
+				<label for="upLoad">+上传</label>
+				<input type="file" name="" id="upLoad">
+			</form>
+			<nav class="history">
+				<a href="javascript:;" class="active">
+					<span class="navIco1"></span>
+					<span>目录</span>
+				</a>
+				<a href="javascript:;">
+					<span class="navIco2"></span>
+					<span>最近</span>
+				</a>
+			</nav>
+			<nav class="file">
+				<a href="javascript:;">
+					<span class="navIco3"></span>
+					<span>文档</span>
+				</a>
+				<a href="javascript:;">
+					<span class="navIco4"></span>
+					<span>图片</span>
+				</a>
+				<a href="javascript:;">
+					<span class="navIco5"></span>
+					<span>音乐</span>
+				</a>
+				<a href="javascript:;">
+					<span class="navIco6"></span>
+					<span>视频</span>
+				</a>
+				<a href="javascript:;">
+					<span class="navIco7"></span>
+					<span>笔记</span>
+				</a>
+			</nav>
+			<nav class="shear">
+				<a href="javascript:;">
+					<span class="navIco8"></span>
+					<span>剪贴板</span>
+				</a>
+			</nav>
+			<nav class="other">
+				<a href="javascript:;">
+					<span class="navIco9"></span>
+					<span>分享的链接</span>
+				</a>
+				<a href="javascript:;">
+					<span class="navIco10"></span>
+					<span>回收站</span>
+				</a>
+			</nav>
+		</section>
+		<section id="rightArea">
+			<header>
+				<nav>
+					<a id="moveTo" href="javascript:;">
+						<i class="moveToIco"></i>
+						<span>移动到</span>
+					</a>
+					<a id="reName" href="javascript:;">
+						<i class="reNameIco"></i>
+						<span>重命名</span>
+					</a>
+					<a id="deleteFile" href="javascript:;">
+						<i class="removeIco"></i>
+						<span>删除</span>
+					</a>
+					<a id="addNewFile" href="javascript:;">
+						<i class="newFileIco"></i>
+						<span>新建文件夹</span>
+					</a>
+					<a id="reLoad" href="index.html">
+						<i class="reloadIco"></i>
+						<span></span>
+					</a>
+				</nav>
+			</header>
+			<section id="main">
+				<section id="rightConArea">
+					<div id="fileTree">
+						<!-- <ul>
+							<li class="focus">
+								<h1 class="title">
+									<p>
+										<i class="openFileIco"></i>
+										<i class="smallFileIco"></i>
+										<span>微云</span>
+									</p>
+								</h1>
+							</li>
+						</ul> -->
+					</div>
+				</section>
+				<section id="mainArea">
+					<div class="mainHeader">
+						<span class="checkBox">
+							<i id="checkAll" class="checkBoxIco"></i>
+						</span>
+						<nav id="mainAreaNav" class="mainNav">
+							<!-- <a href="javascript:;">微云</a>
+							<a href="javascript:;" class="lastPath">微云</a> -->
+						</nav>
+					</div>
+					<div id="fileArea">
+						<!-- <a href="javascript:;">
+							<i></i>
+							<span>我的文档</span>
+							<em></em>
+							<input type="text">
+						</a>
+						<a href="javascript:;">
+							<i></i>
+							<span>我的文档</span>
+						</a> -->
+					</div>
+				</section>
+			</section>
+		</section>
+	</section>
+	<section id="moveToArea">
+		<section class = "conArea">
+			<header>选择储存位置</header>
+			<div class="files"></div>
+			<div class="navArea">
+				<p class="path">移动到:</p>
+				<section id="littleTree"></section>
+			</div>
+			<section class="btns">
+				<a href="javascript:;" class="confirm">确定</a>
+				<a href="javascript:;" class="cancel">取消</a>
+			</section>
+		</section>
+	</section>
+	<section id="tip" class="fail">aaaa</section>
+	<script src = 'js/index.js'></script>
+</body>
+</html>
