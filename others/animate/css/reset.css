@@ -1,0 +1,78 @@
+
+	body,
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	dl,
+	dd,
+	form{
+		margin: 0;
+	}
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+	img {
+		border: none;
+		vertical-align: top;
+	}
+	input,
+	textarea {
+		margin: 0;
+		padding: 0;
+		outline: none;
+	}
+	select {
+		outline:none;
+	}
+	textarea {
+		resize: none;
+		overflow: auto;
+	}
+	table {
+		border-collapse: collapse;
+	}
+	th,
+	td {
+		padding: 0;
+	}
+
+
+/* 补： 输入类型的表单有默认字体高度13.333 不会继承； */
+
+/* 移动端 */
+
+	a,
+	input,
+	button {
+		-webkit-tap-hightlight-color: rgba(0,0,0,0)
+	}
+
+	/* ios圆角button */
+
+	input,
+	button {
+		-webkit-appearance: none;
+		border-radius: 0;
+	}
+
+	body {
+		font-family: Helvetica;
+	}
+	body * {
+		// 禁止文字缩放,否则横竖屏切换会改变字体大小
+		-webkit-text-size-adjust: 100%;
+		// 禁止文字选中
+		-webkit-user-select: none;
+	}
+
+
