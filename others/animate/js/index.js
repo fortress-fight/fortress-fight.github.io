@@ -110,7 +110,7 @@
             var _this = this;
             this.createBg(); // 创建圆形背景
             this.setPst(); // 设置视点
-            this.el.style.transform = "rotateY(150deg) rotateX(0)";
+            this.el.style.transform = "rotateY(0) rotateX(0)";
             $(window).on('resize orientationchange', function() {
                 _this.setPst();
             });
@@ -187,7 +187,7 @@
 
             window.addEventListener('orientationchange', function() {
                 dir = window.orientation;
-                _this.el.style.transform = "rotateY(150deg) rotateX(0)";
+                _this.el.style.transform = "rotateY(0) rotateX(0)";
 
             });
             window.addEventListener('deviceorientation', function(ev) {
