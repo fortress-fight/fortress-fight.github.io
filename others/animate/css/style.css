@@ -1,0 +1,51 @@
+@charset "utf-8";
+body,
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.main_bg {
+    width: 100%;
+    height: 100%;
+    background: url(../bg/bg.jpg) center center;
+    background-size: 100% 100%;
+}
+
+#pos {
+    position: absolute;
+    height: 100px;
+    z-index: 10000;
+    font-size: 50px;
+    color: blue;
+}
+
+#main_view,
+#main_area,
+#main_z,
+#main_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#main_view {
+    -webkit-perspective: 320px;
+    perspective: 320px;
+}
+
+#main_z {
+    transform: translateZ(-150px);
+}
+
+#main_box span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

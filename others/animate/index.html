@@ -1,78 +1,34 @@
 <!DOCTYPE html>
 <html lang="Zh-cn">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Document</title>
-  <script src="./js/jquery-3.0.0.min.js"></script>
-  <script src="./data/data.js" charset="utf-8"></script>
-  <script src="./js/m.Tween.js" charset="utf-8"></script>
-  <style>
-    body,
-    html {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-    .main_bg {
-      width: 100%;
-      height: 100%;
-      background: url(./bg/bg.jpg) center center;
-      background-size: 100% 100%;
-    }
-    #pos {
-      position: absolute;
-      height: 100px;
-      z-index: 10000;
-      font-size: 50px;
-      color: blue;
-    }
-    #main_view,
-    #main_area,
-    #main_z,
-    #main_box {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-    }
-    #main_view {
-      -webkit-perspective: 320px;
-      perspective: 320px;
-    }
-    #main_z {
-      transform: translateZ(-150px);
-    }
-    #main_box {
-      /*transition: 1s;*/
-      /*transition-timing-function: linear;*/
-    }
-    #main_box span {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      /*-webkit-backface-visibility: hidden;*/
-      /*backface-visibility: hidden;*/
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script src="./data/data.js" charset="utf-8"></script>
+    <script src="./js/m.Tween.js" charset="utf-8"></script>
 </head>
+
 <body>
-  <div id="pos"></div>
-  <div class="main_bg"></div>
-  <section id="main_view">
-    <section id="main_area">
-      <section id="main_z">
-        <section id="main_box"></section>
-      </section>
+    <div class="main_bg"></div>
+    <section id="main_view">
+        <section id="main_area">
+            <section id="main_z">
+                <section id="main_box"></section>
+            </section>
+        </section>
     </section>
-  </section>
-  <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
 </body>
+<!--
+    main-bg -- 背景图
+    main_area -- 控制整体的z轴偏移，配合景深达到预期视野
+    main_z -- 简单控制z轴偏移，优化视野（可以和main_area一起，但是如果需要将整个图形的移动，就不适合修改main_area）
+    main_box -- 1. 存放背景图， 2.通过修改这个元素的旋转角度实现伪3d的效果；
+-->
+
 </html>
