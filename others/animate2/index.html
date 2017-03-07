@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box {
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 10;
+        }
+    </style>
+    <script src="./data.js"></script>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <div id="box"></div>
+    <script>
+        var c = document.getElementById('c');
+        var ctx = c.getContext('2d');
+
+        var mh = document.documentElement.clientHeight;
+        var mw = document.documentElement.clientWidth;
+
+        const imgData = data.imgData;
+        let imgArr = [];
+        let onOff = false;
+
+        box.innerHTML = mh + ' ' + mw;
+        c.width = mw;
+        c.height = mh;
+
+        (function() {
+            var imgNum = 0;
+            for (var i = 0; i < imgData.length; i++) {
+                var img = new Image();
+                img.src = imgData[i].path;
+                img.onload = function() {
+                    imgNum++;
+                    checkNum();
+                };
+                img.onerror = function() {
+                    imgNum++;
+                    checkNum();
+                }
+            }
+
+            function checkNum() {
+                if (imgNum === imgData.length) {
+                    run()
+                }
+            }
+        })()
+
+
+        var throttle = function(fn, interval) {
+            var _this = fn,
+                timer,
+                firstTimer;
+            return function() {
+                var _me = this,
+                    args = arguments;
+                if (firstTimer) {
+                    _this.apply(_me, args)
+                    return firstTimer = false;
+                };
+
+                if (timer) {
+                    return false;
+                };
+
+                timer = setTimeout(function() {
+                    clearTimeout(timer);
+                    _this.apply(_me, args);
+                    timer = null;
+                }, interval || 100)
+            }
+        };
+        var z = 0;
+
+        function run() {
+
+            var timer = setInterval(function() {
+                z += 5;
+                ctx.clearRect(0, 0, mw, mh)
+                imgData.forEach(function(item, index) {
+                    // if (z < item.disZ) return;
+                    (function(item) {
+                        if ((z - item.disZ) > 50) {
+                            imgArr.splice(imgArr.indexOf(item), 1);
+                            return
+                        }
+                        if (z > item.disZ) {
+                            var img = new Image();
+                            img.src = item.path;
+                            item.scale *= (item.disZ / z);
+                            item.scale_x = item.width * item.scale;
+                            item.scale_y = item.height * item.scale;
+                            ctx.drawImage(
+                                img, 0, 0, item.width, item.height,
+                                (mw - item.scale_x) / 2 - (item.disX * item.scale),
+                                (mh - item.scale_y) / 2 - (item.disY * item.scale),
+                                item.scale_x, item.scale_y
+                            );
+                            ctx.drawImage(
+                                img, 0, 0, item.width, item.height,
+                                (mw - item.scale_x) / 2 + (item.disX * item.scale),
+                                (mh - item.scale_y) / 2 + (item.disY * item.scale),
+                                item.scale_x, item.scale_y
+                            );
+                            console.log(imgArr.indexOf(item));
+                            if (imgArr.indexOf(item) === -1) {
+                                imgArr.push(item);
+                            }
+                        }
+                    })(item)
+                });
+                if (z > 150) {
+                    clearInterval(timer)
+                    onOff = true;
+                }
+            }, 40)
+        }
+
+        setTimeout(function() {
+
+            console.log(imgArr);
+
+        }, 5000);
+
+        var lastTime = Date.now();
+        window.addEventListener('deviceorientation', function(ev) {
+            // 间隔小于30ms的不进行运动
+            var nowTime = Date.now();
+            if (nowTime - lastTime < 30) {
+                return;
+            }
+
+            lastTime = nowTime;
+            throttle(sway, 20).call(this, ev);
+        });
+
+        function sway(ev) {
+            let beta = Math.round(ev.beta);
+            let gamma = Math.round(ev.gamma);
+            let alpha = Math.round(ev.alpha);
+
+            console.log(beta, z, Math.tan(gamma * Math.PI / 180));
+
+            if (onOff) {
+                ctx.clearRect(0, 0, mw, mh)
+
+                imgArr.forEach(function(item, index) {
+                    var img = new Image();
+                    img.src = item.path;
+                    item.scale_x = item.width * item.scale;
+                    item.scale_y = item.height * item.scale;
+                    ctx.drawImage(
+                        img, 0, 0, item.width, item.height,
+                        (mw - item.scale_x) / 2 - (item.disX * item.scale) + Math.tan(gamma * Math.PI / 180) * item.disZ * item.scale,
+                        (mh - item.scale_y) / 2 - (item.disY * item.scale) + Math.tan(beta * Math.PI / 180) * item.disZ * item.scale,
+                        item.scale_x, item.scale_y
+                    );
+                    ctx.drawImage(img, 0, 0, item.width, item.height,
+                        (mw - item.scale_x) / 2 + (item.disX * item.scale) + Math.tan(gamma * Math.PI / 180) * item.disZ * item.scale,
+                        (mh - item.scale_y) / 2 + (item.disY * item.scale) + Math.tan(beta * Math.PI / 180) * item.disZ * item.scale,
+                        item.scale_x, item.scale_y
+                    );
+                    console.log(imgArr.indexOf(item));
+                    if (imgArr.indexOf(item) === -1) {
+                        imgArr.push(item);
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

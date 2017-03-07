@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box {
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 10;
+        }
+    </style>
+    <script src="./data.js"></script>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <div id="box"></div>
+    <script>
+        var c = document.getElementById('c');
+        var ctx = c.getContext('2d');
+
+        var mh = document.documentElement.clientHeight;
+        var mw = document.documentElement.clientWidth;
+
+        const imgData = data.imgData;
+        box.innerHTML = mh + ' ' + mw;
+        c.width = mw;
+        c.height = mh;
+
+        var img = new Image();
+        img.src = imgData[0].path;
+
+
+        scale_x = imgData[0].width;
+        scale_y = imgData[0].height;
+        dis_x = imgData[0].disX;
+        dis_y = imgData[0].disY;
+        img.onload = function() {
+            var timer = setInterval(function() {
+                ctx.clearRect(0, 0, mw, mh)
+                imgData[0].scale *= 0.9;
+                scale_x = imgData[0].width * imgData[0].scale;
+                scale_y = imgData[0].height * imgData[0].scale;
+                dis_x = imgData[0].disX * imgData[0].scale;
+                if (scale_x > 20 || scale_y > 20) {
+                    ctx.drawImage(img, 0, 0, imgData[0].width, imgData[0].height,
+                        (mw - scale_x) / 2 - dis_x, (mh - scale_y) / 2, scale_x, scale_y)
+                } else {
+                    ctx.drawImage(img, 0, 0, imgData[0].width, imgData[0].height,
+                        (mw - scale_x) / 2 - dis_x, (mh - scale_y) / 2, scale_x, scale_y)
+                    clearInterval(timer)
+                }
+            }, 20)
+        }
+    </script>
+</body>
+
+</html>
